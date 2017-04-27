@@ -13,10 +13,10 @@ public class M09_UF1_Practica1_4 {
                 + "todos vamos a sacar un 10 de nota final.", 
                 xRSAr.getClauPublica());
         System.out.println(xRSAr.getClauPublica());
-        System.out.println(xRSAe.getMissatgeXifrat());
         
         xRSAr.desxifraDadesReceptor(xRSAe.getMissatgeXifrat());
-        //System.out.println(xRSAr.getTextDesxifrat());
+        System.out.println(new String(xRSAe.getMissatgeXifrat()));
+        System.out.println(new String (xRSAr.getTextDesxifrat()));
         
     }
 

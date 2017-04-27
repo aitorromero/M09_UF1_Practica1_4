@@ -33,8 +33,8 @@ public class xifratRSAReceptor {
         Cipher ciph;
         try {
             ciph = Cipher.getInstance("RSA/ECB/PKCS1Padding","SunJCE");
-            ciph.init(Cipher.DECRYPT_MODE, getClauPublica());
-            decryptedData = ciph.doFinal(xRSAe.getMissatgeXifrat());
+            ciph.init(Cipher.DECRYPT_MODE, kP.getPrivate());
+            decryptedData = ciph.doFinal(data);
         } catch (NoSuchAlgorithmException | NoSuchProviderException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException ex) {
             Logger.getLogger(xifratRSAReceptor.class.getName()).log(Level.SEVERE, null, ex);
         }

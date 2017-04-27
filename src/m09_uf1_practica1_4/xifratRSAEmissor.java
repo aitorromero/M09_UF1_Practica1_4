@@ -13,7 +13,7 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
 public class xifratRSAEmissor {
-    byte [] encryptedData;
+    private byte [] encryptedData;
 
     public void xifraDadesEmissor(String missatge_text, PublicKey pub) {
         byte[] msg;
