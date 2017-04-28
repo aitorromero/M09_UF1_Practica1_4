@@ -19,6 +19,10 @@ public class xifratRSAReceptor {
     
     xifratRSAEmissor xRSAe= new xifratRSAEmissor();
 
+    /**
+     * Metodo que genera un par de claves de 2048 bytes, de estas claves podemos
+     * obtener la calve Publica y la Privada.
+     */
     public void generaClaus() {
         try {
             KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
@@ -29,6 +33,12 @@ public class xifratRSAReceptor {
         }
     }
 
+    /**
+     * Recibimos por parametro el mensaje convertido en array de bytes. Y gracias
+     * a Cipher.DECRYPT_MODE y la clave privada desciframos el mensaje y lo 
+     * almacenamos en un array de bytes.
+     * @param data 
+     */
     public void desxifraDadesReceptor(byte[] data) {
         Cipher ciph;
         try {
@@ -41,10 +51,18 @@ public class xifratRSAReceptor {
             
     }
 
+    /**
+     * Metodo para obtener la clavePublica
+     * @return 
+     */
     public PublicKey getClauPublica() {
         return kP.getPublic();
     }
 
+    /**
+     * Meotod para obtener el mensaje descifrado.
+     * @return 
+     */
     public byte[] getTextDesxifrat() {
         return decryptedData;
     }

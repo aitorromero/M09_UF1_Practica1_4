@@ -15,6 +15,14 @@ import javax.crypto.NoSuchPaddingException;
 public class xifratRSAEmissor {
     private byte [] encryptedData;
 
+    /**
+     * Metodo que recibe por parametro un mensaje y obtiene la clave publica 
+     * del par de claves que genera generarClau(). Mediante esta clave y
+     * cipher.ENCRYPT_MODE codificamos el mensaje y lo almacenamos en ecnryptedData.
+     * 
+     * @param missatge_text
+     * @param pub 
+     */
     public void xifraDadesEmissor(String missatge_text, PublicKey pub) {
         byte[] msg;
         try {
@@ -28,6 +36,10 @@ public class xifratRSAEmissor {
         }
     }
 
+    /**
+     * Metodo para obtener el mensaje cifrado (encryptedData)
+     * @return 
+     */
     public byte[] getMissatgeXifrat() {
         return encryptedData;
     }
